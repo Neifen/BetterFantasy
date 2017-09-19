@@ -6,7 +6,7 @@ class CronRunner{
         new CronJob('* * 1 * * *', function() {
             console.log('lets do this');
             var PlayersFetcher = require('./playersFetcher');
-            new PlayersFetcher();
+            new PlayersFetcher().fetchAll();
 
         }, function () {
             /* This function is executed when the job stops */

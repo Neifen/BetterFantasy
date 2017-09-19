@@ -1,6 +1,6 @@
 class PlayersFetcher{
 
-    constructor(){
+    fetchAll(){
 
         var fetch = require('node-fetch');
         fetch('http://api.fantasy.nfl.com/v1/players/stats?position=QB')
