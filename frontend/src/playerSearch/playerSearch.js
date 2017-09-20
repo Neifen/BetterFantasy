@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 
 class PlayerSearch extends Component {
@@ -6,7 +6,9 @@ class PlayerSearch extends Component {
 
     constructor(){
         super();
-        const players = [];
+        this.state = {
+            players: []
+        }
     }
 
     componentDidMount() {
@@ -24,7 +26,9 @@ class PlayerSearch extends Component {
             })
             .then((responseJson) => {
                 console.log('I was triggered during componentDidMount'+responseJson);
-                players = responseJson;
+                this.setState({
+                    players: responseJson
+                });
             });
     }
 
@@ -38,7 +42,7 @@ class PlayerSearch extends Component {
             <AutoComplete
                 floatingLabelText="Search for a player"
                 filter={AutoComplete.fuzzyFilter}
-                dataSource={players}
+                dataSource={this.state.players}
                 maxSearchResults={5}
             />
         </div>
