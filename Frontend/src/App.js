@@ -9,38 +9,11 @@ import {
     TableRow,
     TableRowColumn,
 } from  'material-ui/Table';
+import PlayerSearch from './playerSearch/playerSearch'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 
 class App extends Component {
-
-    constructor() {
-        super();
-
-        this.state = {
-            players : []
-
-        }
-    }
-    componentDidMount() {
-        return fetch('http://api.fantasy.nfl.com/v1/players/stats?position=QB')
-            .then((response) => {
-                if (response.status >= 400) {
-                    throw new Error("Bad response from server");
-                }
-
-                return response.json()
-
-            })
-            .then((responseJson) => {
-                console.log('I was triggered during componentDidMount'+responseJson);
-
-                this.setState({
-                    players: responseJson.players
-                });
-            });
-    }
-
 
     render() {
 
@@ -53,6 +26,8 @@ class App extends Component {
                     <h2>Welcome to React</h2>
                 </div>
                 <MuiThemeProvider>
+                    <PlayerSearch />
+
                     <Table>
                         <TableHeader>
                             <TableRow>
@@ -62,16 +37,6 @@ class App extends Component {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {
-                                this.state.players.map((player) =>
-                                    (<TableRow>
-                                        <TableRowColumn>{player.id}</TableRowColumn>
-                                        <TableRowColumn>{player.name}</TableRowColumn>
-                                        <TableRowColumn>{player.name}</TableRowColumn>
-                                    </TableRow>)
-                                )
-                            }
-
                             <TableRow>
                                 <TableRowColumn>2</TableRowColumn>
                                 <TableRowColumn>Randal White</TableRowColumn>
