@@ -2,26 +2,27 @@ class PlayersGateway {
 
     constructor() {
 
-        var express = require('express');
-        var app = express();
+        const express = require('express');
+        const MongoClient = require('mongodb').MongoClient;
+
+        const app = express();
+        const uri = "mongodb://neifen:056f6vf3@ds141024.mlab.com:41024/heroku_056f6vf3";
 
         app.get('/', function (req, response) {
 
-            var MongoClient = require('mongodb').MongoClient;
-            var uri = "mongodb://neifen:056f6vf3@ds141024.mlab.com:41024/heroku_056f6vf3";
-            MongoClient.connect(uri, function(err, db) {
+            MongoClient.connect(uri, function connectinCallback(err, db) {
                 if (err) {
                     console.error('not connected:');
                     console.error(err);
                 } else {
                     console.log('we are connected');
 
-                    db.collection('players').find({},{"id":1,"name":1}).toArray(function(err, result) {
+                    db.collection('players').find({},{"id":1,"name":1}).toArray(function dbCallback(err, result) {
                         if (err) throw err;
 
                         response.send(result);
 
-                        db.close()
+                        db.close();
                     });
 
                 }

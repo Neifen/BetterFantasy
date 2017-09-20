@@ -2,10 +2,10 @@ class CronRunner{
 
     constructor(){
 
-        var CronJob = require('cron').CronJob;
+        const CronJob = require('cron').CronJob;
         new CronJob('* * 1 * * *', function() {
             console.log('lets do this');
-            var PlayersFetcher = require('./playersFetcher');
+            const PlayersFetcher = require('./playersFetcher');
             new PlayersFetcher().fetchAll();
 
         }, function () {
