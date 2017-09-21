@@ -1,11 +1,13 @@
 {
-  "name": "test-2",
+  "name": "@betterfantasy/frontend",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "material-ui": "^0.19.2"
   },
   "scripts": {
     "start": "react-scripts start",
