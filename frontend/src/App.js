@@ -8,12 +8,13 @@ import {
     TableHeaderColumn,
     TableRow,
     TableRowColumn,
-} from  'material-ui/Table';
+} from 'material-ui/Table';
 import PlayerSearch from './playerSearch/playerSearch'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 
 class App extends Component {
+
 
     render() {
 
@@ -25,35 +26,39 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h2>Welcome to React</h2>
                 </div>
-                <MuiThemeProvider>
-                    <PlayerSearch />
 
-                    <Table>
-                        <TableHeader>
-                            <TableRow>
-                                <TableHeaderColumn>ID</TableHeaderColumn>
-                                <TableHeaderColumn>Name</TableHeaderColumn>
-                                <TableHeaderColumn>Pts</TableHeaderColumn>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            <TableRow>
-                                <TableRowColumn>2</TableRowColumn>
-                                <TableRowColumn>Randal White</TableRowColumn>
-                                <TableRowColumn>Unemployed</TableRowColumn>
-                            </TableRow>
-                            <TableRow>
-                                <TableRowColumn>3</TableRowColumn>
-                                <TableRowColumn>Stephanie Sanders</TableRowColumn>
-                                <TableRowColumn>Employed</TableRowColumn>
-                            </TableRow>
-                            <TableRow>
-                                <TableRowColumn>4</TableRowColumn>
-                                <TableRowColumn>Steve Brown</TableRowColumn>
-                                <TableRowColumn>Employed</TableRowColumn>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
+                <MuiThemeProvider>
+                    <div>
+                        <PlayerSearch/>
+
+
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHeaderColumn>ID</TableHeaderColumn>
+                                    <TableHeaderColumn>Name</TableHeaderColumn>
+                                    <TableHeaderColumn>Pts</TableHeaderColumn>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                <TableRow>
+                                    <TableRowColumn>2</TableRowColumn>
+                                    <TableRowColumn>Randal White</TableRowColumn>
+                                    <TableRowColumn>Unemployed</TableRowColumn>
+                                </TableRow>
+                                <TableRow>
+                                    <TableRowColumn>3</TableRowColumn>
+                                    <TableRowColumn>Stephanie Sanders</TableRowColumn>
+                                    <TableRowColumn>Employed</TableRowColumn>
+                                </TableRow>
+                                <TableRow>
+                                    <TableRowColumn>4</TableRowColumn>
+                                    <TableRowColumn>Steve Brown</TableRowColumn>
+                                    <TableRowColumn>Employed</TableRowColumn>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </div>
                 </MuiThemeProvider>
             </div>
         );

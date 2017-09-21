@@ -3,7 +3,7 @@ class PlayersFetcher{
     fetchAll(){
 
         const fetch = require('node-fetch');
-        fetch('http://api.fantasy.nfl.com/v1/players/stats?position=QB')
+        fetch('http://api.fantasy.nfl.com/v1/players/stats')
             .then(function(res) {
                 return res.json();
             }).then(function(json) {
